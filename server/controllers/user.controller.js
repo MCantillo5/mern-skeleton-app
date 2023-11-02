@@ -12,7 +12,6 @@ const userById = async (req, res, next, id) => {
     .populate('following', '_id name')
     .populate('followers', '_id name')
     .exec();
-    
     if(!user) {
       return res.status(400).json({
         error: 'User not found'
